@@ -1,0 +1,13 @@
+function addTask() {
+    var input = document.getElementById("taskInput").value;
+    if (input !== '') {
+        var li = document.createElement("li");
+        li.innerHTML = input + '<span class="delete" onclick="removeTask(this)">X</span>';
+        document.getElementById("taskList").appendChild(li);
+        document.getElementById("taskInput").value = '';
+    }
+}
+
+function removeTask(task) {
+    task.parentElement.remove();
+}
